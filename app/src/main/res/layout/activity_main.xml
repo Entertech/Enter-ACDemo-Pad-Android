@@ -473,16 +473,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_marginLeft="@dimen/activity_margin_half"
             android:layout_marginTop="@dimen/activity_margin_half"
             android:layout_marginRight="@dimen/activity_margin"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="2"
                 android:layout_height="match_parent"
+                android:layout_weight="2"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -659,20 +659,20 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:visibility="visible"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginTop="@dimen/activity_margin_half"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="visible">
 
                     <LinearLayout
-                        android:visibility="gone"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:background="@drawable/shape_realtime_arousal_pleasure_bg"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -921,6 +921,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/shape_realtime_arousal_pleasure_bg"
                 android:orientation="vertical">
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
@@ -997,28 +998,45 @@
 
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:layout_gravity="center_horizontal"
-                        android:id="@+id/iv_coherence_light"
-                        android:layout_width="80dp"
-                        android:layout_marginLeft="@dimen/margin_vertical"
-                        android:layout_marginRight="@dimen/margin_vertical"
-                        android:layout_height="85dp"
-                        app:layout_constraintDimensionRatio="h,1:1"
-                        android:src="@drawable/vector_drawable_light_red" />
+                    <RelativeLayout
+                        android:layout_width="90dp"
+                        android:layout_height="90dp">
+
+                        <ImageView
+                            android:id="@+id/iv_light_bg"
+                            android:layout_centerHorizontal="true"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@mipmap/ic_light_bg"
+                            app:tint="#F44336" />
+
+                        <ImageView
+                            android:layout_marginTop="@dimen/margin_vertical"
+                            android:layout_alignParentBottom="true"
+                            android:id="@+id/iv_coherence_light"
+                            android:layout_width="80dp"
+                            android:layout_height="85dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="@dimen/margin_vertical"
+                            android:layout_marginRight="@dimen/margin_vertical"
+                            android:src="@drawable/vector_drawable_light_red"
+                            app:layout_constraintDimensionRatio="h,1:1" />
+
+                    </RelativeLayout>
 
                     <TextView
-                        android:layout_gravity="center_horizontal"
                         android:id="@+id/tv_coherence_level"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:fontFamily="sans-serif-medium"
                         android:lineSpacingExtra="0sp"
                         android:text=" (--)"

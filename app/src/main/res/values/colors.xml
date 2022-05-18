@@ -8,4 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="card_bg">#1E2443</color>
+    <color name="light_color_red">#FF5722</color>
+    <color name="light_color_orange">#FF9F8A</color>
+    <color name="light_color_yellow">#D0FFAB</color>
+    <color name="light_color_olive">#65FFA3</color>
+    <color name="light_color_green">#4CAF50</color>
 </resources>

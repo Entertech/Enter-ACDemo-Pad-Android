@@ -14,13 +14,18 @@
         <entry key="app/src/main/res/drawable/vector_drawable_light.xml" value="0.2965" />
         <entry key="app/src/main/res/drawable/vector_drawable_light_green.xml" value="0.2365" />
         <entry key="app/src/main/res/drawable/vector_drawable_light_olive.xml" value="0.2365" />
+        <entry key="app/src/main/res/drawable/vector_drawable_light_olive1.xml" value="0.225" />
+        <entry key="app/src/main/res/drawable/vector_drawable_light_orange.xml" value="0.225" />
+        <entry key="app/src/main/res/drawable/vector_drawable_light_orange1.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/vector_drawable_light_red.xml" value="0.244" />
+        <entry key="app/src/main/res/drawable/vector_drawable_light_red1.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/vector_drawable_light_yellow.xml" value="0.244" />
+        <entry key="app/src/main/res/drawable/vector_drawable_light_yellow1.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/vector_drawable_pic_light.xml" value="0.2615" />
         <entry key="app/src/main/res/drawable/vector_drawable_pic_light_green.xml" value="0.2615" />
         <entry key="app/src/main/res/drawable/vector_drawable_pic_light_red.xml" value="0.2965" />
         <entry key="app/src/main/res/drawable/vector_drawable_pic_light_yellow.xml" value="0.2615" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
       </map>
     </option>
   </component>

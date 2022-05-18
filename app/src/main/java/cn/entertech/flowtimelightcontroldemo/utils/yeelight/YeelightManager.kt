@@ -202,7 +202,7 @@ class YeelightManager(var context: Context) {
 
     fun writeCmd(cmd: String, id: Int?, value: String? = null) {
         if (id == null) {
-            throw IllegalArgumentException("device id can not be null")
+            return
         }
         var realCmd = if (value == null) {
             cmd.replace("%id", id.toString())

@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import cn.entertech.affectivecloudsdk.*
 import cn.entertech.affectivecloudsdk.entity.Error
 import cn.entertech.affectivecloudsdk.interfaces.Callback
@@ -313,7 +314,7 @@ class MainActivity : BaseActivity() {
     fun initEmotionCardView() {
         var attentionScale = arrayOf(0, 30, 70, 100)
         var relaxationScale = arrayOf(0, 30, 70, 100)
-        var coherenceScale = arrayOf(0, 20, 40,60,80, 100)
+        var coherenceScale = arrayOf(0, 20, 40, 60, 80, 100)
         var stressScale = arrayOf(0, 20, 70, 100)
         var pleasureScale = arrayOf(0, 1, 2, 3, 4, 5)
         var arousalScale = arrayOf(0, 1, 2, 3, 4, 5)
@@ -385,11 +386,11 @@ class MainActivity : BaseActivity() {
             )
         )
         coherenceIndicatorItems.add(
-                EmotionIndicatorAppView.IndicateItem(
-                    0.2f,
-                    Color.parseColor("#4CAF50")
-                )
-                )
+            EmotionIndicatorAppView.IndicateItem(
+                0.2f,
+                Color.parseColor("#4CAF50")
+            )
+        )
         stressIndicatorItems.add(
             EmotionIndicatorAppView.IndicateItem(
                 0.2f,
@@ -533,22 +534,52 @@ class MainActivity : BaseActivity() {
         YeelightControlHelper.getInstance(this).setHue(hue)
         when (hue) {
             LIGHT_RED_HUE -> {
+                binding.ivLightBg.setColorFilter(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.light_color_red
+                    )
+                )
                 binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_red)
                 binding.tvCoherenceLevel.text = "较低"
             }
             LIGHT_ORANGE_HUE -> {
+                binding.ivLightBg.setColorFilter(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.light_color_orange
+                    )
+                )
                 binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_orange)
                 binding.tvCoherenceLevel.text = "偏低"
             }
             LIGHT_YELLOW_HUE -> {
+                binding.ivLightBg.setColorFilter(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.light_color_yellow
+                    )
+                )
                 binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_yellow)
                 binding.tvCoherenceLevel.text = "一般"
             }
             LIGHT_OLIVE_HUE -> {
+                binding.ivLightBg.setColorFilter(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.light_color_olive
+                    )
+                )
                 binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_olive)
                 binding.tvCoherenceLevel.text = "较和谐"
             }
             LIGHT_GREEN_HUE -> {
+                binding.ivLightBg.setColorFilter(
+                    ContextCompat.getColor(
+                        this,
+                        R.color.light_color_green
+                    )
+                )
                 binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_green)
                 binding.tvCoherenceLevel.text = "和谐"
             }
