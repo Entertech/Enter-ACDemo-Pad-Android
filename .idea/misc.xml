@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shape_device_contact_bg_bad.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/shape_device_contact_bg_good.xml" value="0.138" />
+        <entry key="app/src/main/res/drawable/shape_realtime_arousal_pleasure_bg.xml" value="0.2265" />
+        <entry key="app/src/main/res/drawable/vector_drawable_ic_device_disconnect.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/vector_drawable_ic_quality_bad.xml" value="0.144" />
+        <entry key="app/src/main/res/drawable/vector_drawable_ic_quality_good.xml" value="0.144" />
+        <entry key="app/src/main/res/drawable/vector_drawable_ic_quality_normal.xml" value="0.144" />
+        <entry key="app/src/main/res/drawable/vector_drawable_pic_light.xml" value="0.2615" />
+        <entry key="app/src/main/res/drawable/vector_drawable_pic_light_green.xml" value="0.2615" />
+        <entry key="app/src/main/res/drawable/vector_drawable_pic_light_yellow.xml" value="0.2615" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

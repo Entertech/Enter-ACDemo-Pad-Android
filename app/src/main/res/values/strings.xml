@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">ACDemo</string>
+
+    <string name="meditation_right_brain">Right Brain</string>
+    <string name="meditation_left_brain">Left Brain</string>
+    <string name="meditation_emotion">Emotion</string>
+    <string name="meditation_gamma_wave">γ wave</string>
+    <string name="meditation_beta_wave">β wave</string>
+    <string name="meditation_alpha_wave">α wave</string>
+    <string name="meditation_theta_wave">θ wave</string>
+    <string name="meditation_delta_wave">δ wave</string>
+    <string name="emotion_level_low">&#160;(低)</string>
+    <string name="emotion_level_normal">&#160;(正常)</string>
+    <string name="emotion_level_high">&#160;(高)</string>
+</resources>

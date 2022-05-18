@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EmotionIndicatorView">
+        <attr format="color" name="eiv_textColor"/>
+        <attr format="dimension" name="eiv_textSize"/>
+        <attr format="dimension" name="eiv_textBottomPadding"/>
+        <attr format="dimension" name="eiv_barWidth"/>
+        <attr format="color" name="eiv_indicatorColor"/>
+        <attr format="dimension" name="eiv_indicatorTopPadding"/>
+        <attr format="dimension" name="eiv_leftPadding"/>
+        <attr format="dimension" name="eiv_rightPadding"/>
+    </declare-styleable>
+</resources>
