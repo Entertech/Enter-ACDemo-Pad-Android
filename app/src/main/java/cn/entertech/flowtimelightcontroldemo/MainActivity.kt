@@ -16,9 +16,10 @@ import cn.entertech.ble.single.BiomoduleBleManager
 import cn.entertech.flowtimelightcontroldemo.databinding.ActivityMainBinding
 import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper
 import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Companion.LIGHT_GREEN_HUE
+import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Companion.LIGHT_OLIVE_HUE
+import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Companion.LIGHT_ORANGE_HUE
 import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Companion.LIGHT_RED_HUE
 import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Companion.LIGHT_YELLOW_HUE
-import cn.entertech.flowtimelightcontroldemo.utils.YeelightManager
 import cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
 import cn.entertech.uicomponentsdk.realtime.PercentProgressBar.Companion.POWER_MODE_RATE
 import com.bumptech.glide.Glide
@@ -309,7 +310,7 @@ class MainActivity : BaseActivity() {
     fun initEmotionCardView() {
         var attentionScale = arrayOf(0, 30, 70, 100)
         var relaxationScale = arrayOf(0, 30, 70, 100)
-        var coherenceScale = arrayOf(0, 25, 60, 100)
+        var coherenceScale = arrayOf(0, 20, 40,60,80, 100)
         var stressScale = arrayOf(0, 20, 70, 100)
         var pleasureScale = arrayOf(0, 1, 2, 3, 4, 5)
         var arousalScale = arrayOf(0, 1, 2, 3, 4, 5)
@@ -355,24 +356,37 @@ class MainActivity : BaseActivity() {
                 Color.parseColor("#16CEB9")
             )
         )
+
         coherenceIndicatorItems.add(
             EmotionIndicatorAppView.IndicateItem(
-                0.25f,
-                Color.parseColor("#3370E9A1")
+                0.2f,
+                Color.parseColor("#FF5722")
             )
         )
         coherenceIndicatorItems.add(
             EmotionIndicatorAppView.IndicateItem(
-                0.35f,
-                Color.parseColor("#8070E9A1")
+                0.2f,
+                Color.parseColor("#FF9F8A")
             )
         )
         coherenceIndicatorItems.add(
             EmotionIndicatorAppView.IndicateItem(
-                0.4f,
-                Color.parseColor("#70E9A1")
+                0.2f,
+                Color.parseColor("#D0FFAB")
             )
         )
+        coherenceIndicatorItems.add(
+            EmotionIndicatorAppView.IndicateItem(
+                0.2f,
+                Color.parseColor("#65FFA3")
+            )
+        )
+        coherenceIndicatorItems.add(
+                EmotionIndicatorAppView.IndicateItem(
+                    0.2f,
+                    Color.parseColor("#4CAF50")
+                )
+                )
         stressIndicatorItems.add(
             EmotionIndicatorAppView.IndicateItem(
                 0.2f,
@@ -442,13 +456,13 @@ class MainActivity : BaseActivity() {
     }
 
     fun showAffectiveLine(
-        pressure: Double?,
+        coherence: Double?,
         pleasure: Double?,
         arousal: Double?,
         relaxation: Double?,
         attention: Double?
     ) {
-        binding.realtimeAffective.appendData(0, pressure)
+        binding.realtimeAffective.appendData(0, coherence)
         binding.realtimeAffective.appendData(1, pleasure)
         binding.realtimeAffective.appendData(2, arousal)
         binding.realtimeAffective.appendData(3, relaxation)
@@ -516,15 +530,23 @@ class MainActivity : BaseActivity() {
         YeelightControlHelper.getInstance(this).setHue(hue)
         when (hue) {
             LIGHT_RED_HUE -> {
-                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_pic_light_red)
-                binding.tvCoherenceLevel.text = "一般"
+                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_red)
+                binding.tvCoherenceLevel.text = "较低"
+            }
+            LIGHT_ORANGE_HUE -> {
+                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_orange)
+                binding.tvCoherenceLevel.text = "偏低"
             }
             LIGHT_YELLOW_HUE -> {
-                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_pic_light_yellow)
+                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_yellow)
+                binding.tvCoherenceLevel.text = "一般"
+            }
+            LIGHT_OLIVE_HUE -> {
+                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_olive)
                 binding.tvCoherenceLevel.text = "较和谐"
             }
             LIGHT_GREEN_HUE -> {
-                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_pic_light_green)
+                binding.ivCoherenceLight.setImageResource(R.drawable.vector_drawable_light_green)
                 binding.tvCoherenceLevel.text = "和谐"
             }
         }

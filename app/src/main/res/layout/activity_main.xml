@@ -54,13 +54,13 @@
         </LinearLayout>
 
         <ImageView
-            android:clickable="true"
             android:id="@+id/iv_device"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_alignParentRight="true"
             android:layout_marginTop="30dp"
             android:layout_marginRight="24dp"
+            android:clickable="true"
             android:src="@drawable/vector_drawable_ic_device_disconnect" />
 
         <ImageView
@@ -121,7 +121,8 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,6 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="1" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -156,14 +158,15 @@
                 android:id="@+id/iv_emotion"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="@dimen/activity_margin"
-                android:src="@mipmap/pic_arousal_pleasure_emotion_else"
                 android:layout_gravity="center_vertical|right"
-                android:layout_marginRight="@dimen/activity_margin" />
+                android:layout_marginRight="@dimen/activity_margin"
+                android:layout_marginBottom="@dimen/activity_margin"
+                android:src="@mipmap/pic_arousal_pleasure_emotion_else" />
+
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
         </LinearLayout>
 
         <TextView
@@ -185,15 +188,15 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_weight="1"
             android:layout_marginLeft="@dimen/activity_margin"
             android:layout_marginTop="@dimen/activity_margin_half"
             android:layout_marginRight="@dimen/activity_margin_half"
+            android:layout_weight="1"
             android:orientation="horizontal">
 
             <cn.entertech.uicomponentsdk.realtime.RealtimeBrainwaveSpectrumView
-                android:layout_width="0dp"
                 android:id="@+id/realtime_brainwave_spectrum"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:background="@drawable/shape_realtime_arousal_pleasure_bg"
@@ -425,13 +428,13 @@
     </LinearLayout>
 
     <View
-        app:layout_constraintBottom_toBottomOf="parent"
         android:id="@+id/split_line"
         android:layout_width="1dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/card_bg"
-        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/ll_left"
         app:layout_constraintRight_toLeftOf="@+id/ll_right"
         app:layout_constraintTop_toBottomOf="@+id/rl_title" />
@@ -466,218 +469,476 @@
                 android:layout_marginTop="2dp"
                 android:background="#16CEB9" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_marginTop="@dimen/activity_margin_half"
-            android:layout_marginLeft="@dimen/activity_margin_half"
-            android:layout_marginRight="@dimen/activity_margin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:orientation="vertical">
+            android:layout_marginLeft="@dimen/activity_margin_half"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:layout_marginRight="@dimen/activity_margin"
+            android:orientation="horizontal">
+
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_realtime_arousal_pleasure_bg"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="@dimen/activity_margin">
+
+                            <ImageView
+                                android:id="@+id/iv_icon_relaxation"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@mipmap/ic_relaxation" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_margin_half"
+                                android:layout_toRightOf="@+id/iv_icon_relaxation"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="8sp"
+                                android:text="放松度"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/activity_margin"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_relaxation_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:lineSpacingExtra="0sp"
+                                android:text="--"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_relaxation_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="0sp"
+                                android:text=" (--)"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
+
+                            android:id="@+id/eiv_relaxation"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="@dimen/activity_margin_half"
+                            app:eiv_barWidth="4dp"
+                            app:eiv_indicatorColor="#16CEB9"
+                            app:eiv_leftPadding="16dp"
+                            app:eiv_rightPadding="16dp"
+                            app:eiv_textBottomPadding="5dp"
+                            app:eiv_textColor="@color/white"
+                            app:eiv_textSize="10sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/activity_margin_half"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_realtime_arousal_pleasure_bg"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="@dimen/activity_margin">
+
+                            <ImageView
+                                android:id="@+id/iv_icon_attention"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@mipmap/ic_attention" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_margin_half"
+                                android:layout_toRightOf="@+id/iv_icon_attention"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="8sp"
+                                android:text="专注度"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/activity_margin"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_attention_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:lineSpacingExtra="0sp"
+                                android:text="--"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_attention_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="0sp"
+                                android:text=" (--)"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
+
+                            android:id="@+id/eiv_attention"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="@dimen/activity_margin_half"
+                            app:eiv_barWidth="4dp"
+                            app:eiv_indicatorColor="#2D99FF"
+                            app:eiv_leftPadding="16dp"
+                            app:eiv_rightPadding="16dp"
+                            app:eiv_textBottomPadding="5dp"
+                            app:eiv_textColor="@color/white"
+                            app:eiv_textSize="10sp" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="@dimen/activity_margin_half"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_realtime_arousal_pleasure_bg"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="@dimen/activity_margin">
+
+                            <ImageView
+                                android:id="@+id/iv_icon_pressure"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@mipmap/ic_pressure" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_margin_half"
+                                android:layout_toRightOf="@+id/iv_icon_pressure"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="8sp"
+                                android:text="压力水平"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/activity_margin"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_pressure_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:lineSpacingExtra="0sp"
+                                android:text="--"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_pressure_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="0sp"
+                                android:text=" (--)"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
+                            android:id="@+id/eiv_pressure"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="@dimen/activity_margin_half"
+                            app:eiv_barWidth="4dp"
+                            app:eiv_indicatorColor="#FF5F40"
+                            app:eiv_leftPadding="16dp"
+                            app:eiv_rightPadding="16dp"
+                            app:eiv_textBottomPadding="5dp"
+                            app:eiv_textColor="@color/white"
+                            app:eiv_textSize="10sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_realtime_arousal_pleasure_bg"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="@dimen/activity_margin">
+
+                            <ImageView
+                                android:id="@+id/iv_icon_pleasure"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@mipmap/ic_relaxation" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_margin_half"
+                                android:layout_toRightOf="@+id/iv_icon_pleasure"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="8sp"
+                                android:text="愉悦度"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/activity_margin"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_pleasure_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:lineSpacingExtra="0sp"
+                                android:text="--"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_pleasure_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="0sp"
+                                android:text=" (--)"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
+
+                            android:id="@+id/eiv_pleasure"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="@dimen/activity_margin_half"
+                            app:eiv_barWidth="4dp"
+                            app:eiv_indicatorColor="#6648FF"
+                            app:eiv_leftPadding="16dp"
+                            app:eiv_rightPadding="16dp"
+                            app:eiv_textBottomPadding="5dp"
+                            app:eiv_textColor="@color/white"
+                            app:eiv_textSize="10sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/activity_margin_half"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape_realtime_arousal_pleasure_bg"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginRight="@dimen/activity_margin">
+
+                            <ImageView
+                                android:id="@+id/iv_icon_arousal"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:src="@mipmap/ic_arousal" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_margin_half"
+                                android:layout_toRightOf="@+id/iv_icon_arousal"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="8sp"
+                                android:text="激活度"
+                                android:textColor="@color/white"
+                                android:textSize="13sp"
+                                android:textStyle="normal" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:layout_marginLeft="@dimen/activity_margin"
+                            android:layout_weight="1"
+                            android:gravity="bottom"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_arousal_value"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif"
+                                android:lineSpacingExtra="0sp"
+                                android:text="--"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_arousal_level"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="sans-serif-medium"
+                                android:lineSpacingExtra="0sp"
+                                android:text=" (--)"
+                                android:textColor="@color/white"
+                                android:textSize="11sp"
+                                android:textStyle="normal" />
+                        </LinearLayout>
+
+                        <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
+                            android:id="@+id/eiv_arousal"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="@dimen/activity_margin_half"
+                            app:eiv_barWidth="4dp"
+                            app:eiv_indicatorColor="#F7517F"
+                            app:eiv_leftPadding="16dp"
+                            app:eiv_rightPadding="16dp"
+                            app:eiv_textBottomPadding="5dp"
+                            app:eiv_textColor="@color/white"
+                            app:eiv_textSize="10sp" />
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/activity_margin_half"
                 android:layout_weight="1"
-                android:orientation="horizontal">
-
+                android:background="@drawable/shape_realtime_arousal_pleasure_bg"
+                android:orientation="vertical">
                 <LinearLayout
-                    android:background="@drawable/shape_realtime_arousal_pleasure_bg"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <RelativeLayout
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="@dimen/activity_margin"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        >
-
-                        <ImageView
-                            android:id="@+id/iv_icon_relaxation"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@mipmap/ic_relaxation" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/activity_margin_half"
-                            android:layout_toRightOf="@+id/iv_icon_relaxation"
-                            android:fontFamily="sans-serif-medium"
-                            android:lineSpacingExtra="8sp"
-                            android:text="放松度"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            android:textStyle="normal" />
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_marginLeft="@dimen/activity_margin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:gravity="bottom"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        >
-
-                        <TextView
-                            android:id="@+id/tv_relaxation_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:fontFamily="sans-serif"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text="--"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_relaxation_level"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="11sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text=" (--)"
-                            />
-                    </LinearLayout>
-
-                    <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
-
-                        android:id="@+id/eiv_relaxation"
-                        app:eiv_barWidth="4dp"
-                        android:layout_marginTop="@dimen/activity_margin_half"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        app:eiv_textSize="10sp"
-                        app:eiv_textColor="@color/white"
-                        app:eiv_rightPadding="16dp"
-                        app:eiv_leftPadding="16dp"
-                        app:eiv_textBottomPadding="5dp"
-                        app:eiv_indicatorColor="#16CEB9"
-                        />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginLeft="@dimen/activity_margin_half"
-                    android:background="@drawable/shape_realtime_arousal_pleasure_bg"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
-
-                    <RelativeLayout
-                        android:layout_marginTop="12dp"
                         android:layout_marginLeft="12dp"
-                        android:layout_marginRight="@dimen/activity_margin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-
-                        <ImageView
-                            android:id="@+id/iv_icon_attention"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@mipmap/ic_attention" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/activity_margin_half"
-                            android:layout_toRightOf="@+id/iv_icon_attention"
-                            android:fontFamily="sans-serif-medium"
-                            android:lineSpacingExtra="8sp"
-                            android:text="专注度"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            android:textStyle="normal" />
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_marginLeft="@dimen/activity_margin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:gravity="bottom"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        >
-
-                        <TextView
-                            android:id="@+id/tv_attention_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:fontFamily="sans-serif"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text="--"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_attention_level"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="11sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text=" (--)"
-                            />
-                    </LinearLayout>
-
-                    <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
-
-                        android:id="@+id/eiv_attention"
-                        app:eiv_barWidth="4dp"
-                        android:layout_marginTop="@dimen/activity_margin_half"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        app:eiv_textSize="10sp"
-                        app:eiv_textColor="@color/white"
-                        app:eiv_rightPadding="16dp"
-                        app:eiv_leftPadding="16dp"
-                        app:eiv_textBottomPadding="5dp"
-                        app:eiv_indicatorColor="#2D99FF"
-                        />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginLeft="@dimen/activity_margin_half"
-                    android:background="@drawable/shape_realtime_arousal_pleasure_bg"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
-
-                    <RelativeLayout
                         android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="@dimen/activity_margin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
+                        android:layout_marginRight="@dimen/activity_margin">
+
                         <ImageView
                             android:id="@+id/iv_icon_coherence"
                             android:layout_width="18dp"
                             android:layout_height="18dp"
-                            android:src="@mipmap/ic_coherence"/>
+                            android:src="@mipmap/ic_coherence" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -694,342 +955,88 @@
                     </RelativeLayout>
 
                     <LinearLayout
-                        android:layout_marginLeft="@dimen/activity_margin"
-                        android:layout_marginRight="@dimen/activity_margin"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:gravity="bottom"
+                        android:layout_marginLeft="@dimen/activity_margin"
+                        android:layout_marginRight="@dimen/activity_margin"
                         android:layout_weight="1"
-                        android:orientation="horizontal"
-                        >
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
 
                         <TextView
                             android:id="@+id/tv_coherence_value"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textSize="20sp"
                             android:fontFamily="sans-serif"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
                             android:lineSpacingExtra="0sp"
                             android:text="--"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_coherence_level"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="11sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
                             android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text=" (--)"
-                            />
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"/>
-                        <ImageView
-                            android:id="@+id/iv_coherence_light"
-                            android:src="@drawable/vector_drawable_pic_light_red"
-                            android:layout_width="35dp"
-                            android:layout_height="35dp"/>
+                            android:layout_weight="1" />
+
                     </LinearLayout>
 
                     <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
                         android:id="@+id/eiv_coherence"
-                        app:eiv_barWidth="4dp"
-                        android:layout_marginTop="@dimen/activity_margin_half"
                         android:layout_width="match_parent"
                         android:layout_height="32dp"
-                        app:eiv_textSize="10sp"
-                        app:eiv_textColor="@color/white"
-                        app:eiv_rightPadding="16dp"
-                        app:eiv_leftPadding="16dp"
-                        app:eiv_textBottomPadding="5dp"
+                        android:layout_marginTop="@dimen/activity_margin_half"
+                        app:eiv_barWidth="4dp"
                         app:eiv_indicatorColor="#70E9A1"
-                        />
+                        app:eiv_leftPadding="16dp"
+                        app:eiv_rightPadding="16dp"
+                        app:eiv_textBottomPadding="5dp"
+                        app:eiv_textColor="@color/white"
+                        app:eiv_textSize="10sp" />
 
 
                 </LinearLayout>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_marginTop="@dimen/activity_margin_half"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
                 <LinearLayout
-                    android:background="@drawable/shape_realtime_arousal_pleasure_bg"
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
                     android:layout_weight="1"
-                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    >
+                    android:gravity="center">
 
-                    <RelativeLayout
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="@dimen/activity_margin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-                        <ImageView
-                            android:id="@+id/iv_icon_pressure"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@mipmap/ic_pressure"/>
+                    <ImageView
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/iv_coherence_light"
+                        android:layout_width="80dp"
+                        android:layout_marginLeft="@dimen/margin_vertical"
+                        android:layout_marginRight="@dimen/margin_vertical"
+                        android:layout_height="85dp"
+                        app:layout_constraintDimensionRatio="h,1:1"
+                        android:src="@drawable/vector_drawable_light_red" />
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/activity_margin_half"
-                            android:layout_toRightOf="@+id/iv_icon_pressure"
-                            android:fontFamily="sans-serif-medium"
-                            android:lineSpacingExtra="8sp"
-                            android:text="压力水平"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            android:textStyle="normal" />
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_marginLeft="@dimen/activity_margin"
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:id="@+id/tv_coherence_level"
                         android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:gravity="bottom"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        >
-
-                        <TextView
-                            android:id="@+id/tv_pressure_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:fontFamily="sans-serif"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text="--"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_pressure_level"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="11sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text=" (--)"
-                            />
-                    </LinearLayout>
-
-                    <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
-                        android:id="@+id/eiv_pressure"
-                        app:eiv_barWidth="4dp"
-                        android:layout_marginTop="@dimen/activity_margin_half"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        app:eiv_textSize="10sp"
-                        app:eiv_textColor="@color/white"
-                        app:eiv_rightPadding="16dp"
-                        app:eiv_leftPadding="16dp"
-                        app:eiv_textBottomPadding="5dp"
-                        app:eiv_indicatorColor="#FF5F40"
-                        />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginLeft="@dimen/activity_margin_half"
-                    android:background="@drawable/shape_realtime_arousal_pleasure_bg"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
-
-                    <RelativeLayout
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="@dimen/activity_margin"
-                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        >
-                        <ImageView
-                            android:id="@+id/iv_icon_pleasure"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@mipmap/ic_relaxation"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/activity_margin_half"
-                            android:layout_toRightOf="@+id/iv_icon_pleasure"
-                            android:fontFamily="sans-serif-medium"
-                            android:lineSpacingExtra="8sp"
-                            android:text="愉悦度"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            android:textStyle="normal" />
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_marginLeft="@dimen/activity_margin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:gravity="bottom"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        >
-
-                        <TextView
-                            android:id="@+id/tv_pleasure_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:fontFamily="sans-serif"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text="--"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_pleasure_level"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="11sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text=" (--)"
-                            />
-                    </LinearLayout>
-
-                    <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
-
-                        android:id="@+id/eiv_pleasure"
-                        app:eiv_barWidth="4dp"
-                        android:layout_marginTop="@dimen/activity_margin_half"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        app:eiv_textSize="10sp"
-                        app:eiv_textColor="@color/white"
-                        app:eiv_rightPadding="16dp"
-                        app:eiv_leftPadding="16dp"
-                        app:eiv_textBottomPadding="5dp"
-                        app:eiv_indicatorColor="#6648FF"
-                        />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_marginLeft="@dimen/activity_margin_half"
-                    android:background="@drawable/shape_realtime_arousal_pleasure_bg"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    >
-
-                    <RelativeLayout
-                        android:layout_marginTop="12dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="@dimen/activity_margin"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        >
-                        <ImageView
-                            android:id="@+id/iv_icon_arousal"
-                            android:layout_width="18dp"
-                            android:layout_height="18dp"
-                            android:src="@mipmap/ic_arousal"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/activity_margin_half"
-                            android:layout_toRightOf="@+id/iv_icon_arousal"
-                            android:fontFamily="sans-serif-medium"
-                            android:lineSpacingExtra="8sp"
-                            android:text="激活度"
-                            android:textColor="@color/white"
-                            android:textSize="13sp"
-                            android:textStyle="normal" />
-
-                    </RelativeLayout>
-
-                    <LinearLayout
-                        android:layout_marginLeft="@dimen/activity_margin"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:gravity="bottom"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        >
-
-                        <TextView
-                            android:id="@+id/tv_arousal_value"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="20sp"
-                            android:fontFamily="sans-serif"
-                            android:textStyle="bold"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text="--"
-                            />
-
-                        <TextView
-                            android:id="@+id/tv_arousal_level"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="11sp"
-                            android:fontFamily="sans-serif-medium"
-                            android:textStyle="normal"
-                            android:textColor="@color/white"
-                            android:lineSpacingExtra="0sp"
-                            android:text=" (--)"
-                            />
-                    </LinearLayout>
-
-                    <cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
-                        android:id="@+id/eiv_arousal"
-                        app:eiv_barWidth="4dp"
-                        android:layout_marginTop="@dimen/activity_margin_half"
-                        android:layout_width="match_parent"
-                        android:layout_height="32dp"
-                        app:eiv_textSize="10sp"
-                        app:eiv_textColor="@color/white"
-                        app:eiv_rightPadding="16dp"
-                        app:eiv_leftPadding="16dp"
-                        app:eiv_textBottomPadding="5dp"
-                        app:eiv_indicatorColor="#F7517F"
-                        />
-
-
+                        android:fontFamily="sans-serif-medium"
+                        android:lineSpacingExtra="0sp"
+                        android:text=" (--)"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="normal" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+
         <LinearLayout
-            android:layout_marginBottom="@dimen/activity_margin"
-            android:layout_marginTop="@dimen/activity_margin_half"
-            android:layout_marginLeft="@dimen/activity_margin_half"
-            android:layout_marginRight="@dimen/activity_margin"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginLeft="@dimen/activity_margin_half"
+            android:layout_marginTop="@dimen/activity_margin_half"
+            android:layout_marginRight="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -1038,21 +1045,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
+                app:rlcv_background="@drawable/shape_realtime_arousal_pleasure_bg"
                 app:rlcv_buffer="10"
                 app:rlcv_isDrawValueText="false"
-                app:rlcv_pointBgColor="@color/white"
+                app:rlcv_isForPad="true"
                 app:rlcv_isShowInfoIcon="false"
                 app:rlcv_lineColor="#FF5F40,#6648FF,#F7517F,#16CEB9,#2D99FF"
                 app:rlcv_lineLegendText="压力,愉悦,激活,放松,专注"
-                app:rlcv_maxValue="120"
                 app:rlcv_lineWidth="2dp"
-                app:rlcv_isForPad="true"
+                app:rlcv_mainColor="@color/white"
+                app:rlcv_maxValue="120"
+                app:rlcv_pointBgColor="@color/white"
                 app:rlcv_refreshTime="600"
                 app:rlcv_screenPointCount="33"
-                app:rlcv_mainColor="@color/white"
-                app:rlcv_titleText="情绪变化"
-                app:rlcv_background="@drawable/shape_realtime_arousal_pleasure_bg"
-                />
+                app:rlcv_titleText="情绪变化" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

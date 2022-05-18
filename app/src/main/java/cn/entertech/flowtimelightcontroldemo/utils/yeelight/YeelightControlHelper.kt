@@ -16,7 +16,9 @@ class YeelightControlHelper(var context: Context) {
         const val HEART_VALUE_MIX = 45
         const val HEART_VALUE_MAX = 180
         const val LIGHT_RED_HUE = 0.0
-        const val LIGHT_YELLOW_HUE = 45.0
+        const val LIGHT_ORANGE_HUE = 30.0
+        const val LIGHT_YELLOW_HUE = 60.0
+        const val LIGHT_OLIVE_HUE = 90.0
         const val LIGHT_GREEN_HUE = 120.0
 
         @Volatile
@@ -54,30 +56,60 @@ class YeelightControlHelper(var context: Context) {
     var hue: Double = LIGHT_RED_HUE
     fun reflectCoherenceToHue(coherence: Double): Double {
         if (hue == LIGHT_RED_HUE) {
-            if (coherence in 25.0..59.0) {
+            if (coherence in 20.0..39.0) {
+                hue = LIGHT_ORANGE_HUE
+            } else if (coherence in 40.0..59.0) {
                 hue = LIGHT_YELLOW_HUE
+            } else if (coherence in 60.0..79.0) {
+                hue = LIGHT_OLIVE_HUE
+            } else if (coherence > 79) {
+                hue = LIGHT_GREEN_HUE
             }
-            if (coherence > 59) {
+        }
+        if (hue == LIGHT_ORANGE_HUE) {
+            if (coherence in 0.0..10.0) {
+                hue = LIGHT_RED_HUE
+            } else if (coherence in 40.0..59.0) {
+                hue = LIGHT_YELLOW_HUE
+            } else if (coherence in 60.0..79.0) {
+                hue = LIGHT_OLIVE_HUE
+            } else if (coherence > 79) {
                 hue = LIGHT_GREEN_HUE
             }
         }
         if (hue == LIGHT_YELLOW_HUE) {
-            if (coherence <= 15) {
+            if (coherence <= 10) {
                 hue = LIGHT_RED_HUE
+            } else if (coherence in 11.0..30.0) {
+                hue = LIGHT_ORANGE_HUE
+            } else if (coherence in 60.0..79.0) {
+                hue = LIGHT_OLIVE_HUE
+            } else if (coherence > 79) {
+                hue = LIGHT_GREEN_HUE
             }
-            if (coherence > 59) {
+        }
+        if (hue == LIGHT_OLIVE_HUE) {
+            if (coherence <= 10) {
+                hue = LIGHT_RED_HUE
+            } else if (coherence in 11.0..30.0) {
+                hue = LIGHT_ORANGE_HUE
+            } else if (coherence in 31.0..50.0) {
+                hue = LIGHT_YELLOW_HUE
+            } else if (coherence > 79) {
                 hue = LIGHT_GREEN_HUE
             }
         }
         if (hue == LIGHT_GREEN_HUE) {
-            if (coherence <= 15) {
+            if (coherence <= 10) {
                 hue = LIGHT_RED_HUE
-            }
-            if (coherence < 50) {
+            } else if (coherence in 11.0..30.0) {
+                hue = LIGHT_ORANGE_HUE
+            } else if (coherence in 31.0..50.0) {
                 hue = LIGHT_YELLOW_HUE
+            } else if (coherence in 51.0..70.0) {
+                hue = LIGHT_OLIVE_HUE
             }
         }
-
         return hue
     }
 
@@ -120,7 +152,7 @@ class YeelightControlHelper(var context: Context) {
         yeelightManager.writeCmd(YeelightManager.CMD_OFF, mDeviceId)
     }
 
-    fun setLightBrightness(lightBrightness:Int){
+    fun setLightBrightness(lightBrightness: Int) {
         yeelightManager.writeCmd(
             YeelightManager.CMD_BRIGHTNESS,
             mDeviceId,

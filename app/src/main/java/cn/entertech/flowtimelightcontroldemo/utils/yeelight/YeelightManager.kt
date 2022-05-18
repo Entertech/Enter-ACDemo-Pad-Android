@@ -56,7 +56,7 @@ class YeelightManager(var context: Context) {
         var CMD_CT =
             "{\"id\":%id,\"method\":\"set_ct_abx\",\"params\":[%value, \"smooth\", 500]}\r\n"
         var CMD_HSV =
-            "{\"id\":%id,\"method\":\"set_hsv\",\"params\":[%value, 100, \"smooth\", 200]}\r\n"
+            "{\"id\":%id,\"method\":\"set_hsv\",\"params\":[%value, 100, \"smooth\", 1500]}\r\n"
         var CMD_BRIGHTNESS =
             "{\"id\":%id,\"method\":\"set_bright\",\"params\":[%value, \"sudden\", 1]}\r\n"
         var CMD_BRIGHTNESS_SCENE =
