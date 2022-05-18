@@ -23,7 +23,9 @@ import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Compani
 import cn.entertech.flowtimelightcontroldemo.view.EmotionIndicatorAppView
 import cn.entertech.uicomponentsdk.realtime.PercentProgressBar.Companion.POWER_MODE_RATE
 import com.bumptech.glide.Glide
+import java.util.*
 import java.util.concurrent.CopyOnWriteArrayList
+import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity() {
     private var loading: AlertDialog? = null
@@ -144,6 +146,7 @@ class MainActivity : BaseActivity() {
     var pleasure: Double? = 0.0
     var arousal: Double? = 0.0
     fun initAffectiveCloudManager() {
+        var userId = "ACDemo${Random().nextInt(20)}"
         var availableAffectiveServices =
             listOf(
                 cn.entertech.affectivecloudsdk.entity.Service.ATTENTION,
@@ -183,7 +186,7 @@ class MainActivity : BaseActivity() {
 //            "cd9c757ae9a7b7e1cff01ee1bb4d4f98",
             "93e3cf84-dea1-11e9-ae15-0242ac120002",
             "c28e78f98f154962c52fcd3444d8116f",
-            "ZDDemo1"
+            "$userId"
         )
             .url("wss://server.affectivecloud.cn/ws/algorithm/v2/")
             .timeout(10000)
