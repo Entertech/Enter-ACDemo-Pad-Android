@@ -1,7 +1,7 @@
-# Enter-ACDemo-Pad-Android
+# 回车情感云Demo(Android PAD端)
 
 ## 介绍
-该Demo展示了情感云各个参数
+该Demo展示了从回车Flowtime头环采集脑电、心率原始数据，并经过回车情感云平台计算分析，得出各个情感值。
 
 ## 使用说明
 1.在输入框输入管理员分发的APP_KEY和APP_SECRET并点击继续按钮
