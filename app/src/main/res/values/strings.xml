@@ -12,4 +12,6 @@
     <string name="emotion_level_low">&#160;(低)</string>
     <string name="emotion_level_normal">&#160;(正常)</string>
     <string name="emotion_level_high">&#160;(高)</string>
+    <string name="auth_page_title">请输入情感云 APP_KEY 和 APP_SECRET</string>
+    <string name="auth_start">继续</string>
 </resources>

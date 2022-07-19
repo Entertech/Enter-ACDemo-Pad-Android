@@ -6,6 +6,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_device_contact_bg_bad.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/shape_device_contact_bg_good.xml" value="0.138" />
+        <entry key="app/src/main/res/drawable/shape_input_bg.xml" value="0.2275" />
         <entry key="app/src/main/res/drawable/shape_realtime_arousal_pleasure_bg.xml" value="0.2265" />
         <entry key="app/src/main/res/drawable/vector_drawable_ic_device_disconnect.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/vector_drawable_ic_quality_bad.xml" value="0.144" />
@@ -25,7 +26,8 @@
         <entry key="app/src/main/res/drawable/vector_drawable_pic_light_green.xml" value="0.2615" />
         <entry key="app/src/main/res/drawable/vector_drawable_pic_light_red.xml" value="0.2965" />
         <entry key="app/src/main/res/drawable/vector_drawable_pic_light_yellow.xml" value="0.2615" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.165625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.12" />
       </map>
     </option>
   </component>

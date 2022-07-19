@@ -15,6 +15,7 @@ import cn.entertech.affectivecloudsdk.entity.Error
 import cn.entertech.affectivecloudsdk.interfaces.Callback
 import cn.entertech.ble.single.BiomoduleBleManager
 import cn.entertech.flowtimelightcontroldemo.databinding.ActivityMainBinding
+import cn.entertech.flowtimelightcontroldemo.utils.SettingManager
 import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper
 import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Companion.LIGHT_GREEN_HUE
 import cn.entertech.flowtimelightcontroldemo.utils.YeelightControlHelper.Companion.LIGHT_OLIVE_HUE
@@ -185,8 +186,8 @@ class MainActivity : BaseActivity() {
         var enterAffectiveCloudConfig = EnterAffectiveCloudConfig.Builder(
 //            "015b7118-b81e-11e9-9ea1-8c8590cb54f9",
 //            "cd9c757ae9a7b7e1cff01ee1bb4d4f98",
-            "93e3cf84-dea1-11e9-ae15-0242ac120002",
-            "c28e78f98f154962c52fcd3444d8116f",
+            SettingManager.getInstance().appKey,
+            SettingManager.getInstance().appSecret,
             "$userId"
         )
             .url("wss://server.affectivecloud.cn/ws/algorithm/v2/")
@@ -700,20 +701,27 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    override fun onBackPressed() {
+        bleManager?.stopHeartAndBrainCollection()
+        bleManager?.disConnect()
+        super.onBackPressed()
+    }
 
     override fun onDestroy() {
         bleManager?.removeHeartRateListener(hrDataListener)
         bleManager?.removeRawDataListener(eegDataListener)
         bleManager?.removeContactListener(contactListener)
-        enterAffectiveCloudManager?.release(object : Callback {
-            override fun onError(error: Error?) {
+        if (enterAffectiveCloudManager?.isInit == true){
+            enterAffectiveCloudManager?.release(object : Callback {
+                override fun onError(error: Error?) {
 
-            }
+                }
 
-            override fun onSuccess() {
-            }
+                override fun onSuccess() {
+                }
 
-        })
+            })
+        }
         super.onDestroy()
     }
 }
